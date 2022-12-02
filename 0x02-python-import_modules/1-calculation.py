@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 if __name__ == "__main__":
-    """ Do some maths and print the results. """
+    """Do some maths and print the results."""
     from calculator_1 import add, sub, mul, div
 
 a = 10
