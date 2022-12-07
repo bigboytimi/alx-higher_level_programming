@@ -7,7 +7,7 @@ if __name__ == "__main__":
     if len(sys.argv) - 1 != 3:
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
         sys.exit(1)
-    oprts = {"+": add, "-":sub, "*": mul, "/": div}
+    oprts = {"+": add, "-": sub, "*": mul, "/": div}
 
     if sys.argv[2] not in list(oprts.keys()):
         print("Unknown operator. Available operators: +, -, * and /")
@@ -16,4 +16,4 @@ if __name__ == "__main__":
     a = int(sys.argv[1])
     b = int(sys.argv[3])
 
-    print("{} {} {} = {}".format(sys.argv[1], sys.argv[2], sys.argv[3], oprts[sys.argv[2]](a, b)))
+    print("{} {} {} = {}".format(a, sys.argv[2], b, oprts[sys.argv[2]](a, b)))
