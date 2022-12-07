@@ -9,4 +9,3 @@ if __name__ == "__main__":
     for i in arr:
         if i[:2] != "__":
             print(i)
-
