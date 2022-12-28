@@ -1,0 +1,109 @@
+======================
+Using 0-add_integer.py
+======================
+
+
+The module defines an integer addition function ``add_integer(a, b=98)``.
+
+====================================
+How to use the function with Numbers
+====================================
+
+``add_integer(val1, val2)``` returns the addition of its two argument. 
+
+
+::
+
+import module and add two integers
+	>>> add_integer = __import__('0-add_integer').add_integer
+	>>> add_integer(2, 5)
+	7
+
+::
+
+add positive and negative integers
+	>>> add_integer(5, -4)
+	1
+
+::
+
+floats are casted to ints before addition is performed
+	>>> add_integer(11.0, 1.2)
+	12
+
+::
+
+Try two negative floats
+
+	>>> add_integer(-3.5, -0.7)
+	-3
+
+::
+
+float and int value can also be added
+	>>> add_integer(7.9, 79)
+	86
+
+::
+
+The second argument is assigned a default value(98) if it's not provided
+	>>> add_integer(-3)
+	95
+
+
+
+========================================
+How to use the function with Non-numbers
+========================================
+
+``add_integer(val1, val2)`` expects that both arguments are either integers or floats.
+If none, a TypeError is raised. If no argument is found, raise TypeError for first argument
+since second argument has a default value.
+
+::
+
+	>>> add_integer("string", 5)
+	Traceback (most recent call last):
+	TypeError: a must be an integer
+
+::
+
+	>>> add_integer(2, "string")
+	Traceback (most recent call last):
+	TypeError: b must be an integer
+
+::
+
+	>>> add_integer(None)
+	Traceback (most recent call last):
+	TypeError: a must be an integer
+
+::
+
+	>>> add_integer(3.2, None)
+	Traceback (most recent call last):
+	TypeError: b must be an integer
+
+::
+
+if both arguments are non-integers and non-floats, a TypeError is raised
+for the first argument
+
+	>>> add_integer("string", "string")
+	Traceback (most recent call last):
+	TypeError: a must be an integer
+
+::
+
+If input is Nan, raise ValueError
+
+	>>> add_integer(float('nan'))
+	Traceback (most recent call last):
+	ValueError: cannot convert float NaN to integer
+
+::
+
+	>>> add_integer(2, float('nan'))
+	Traceback (most recent call last):
+	ValueError: cannot convert float NaN to integer
+
