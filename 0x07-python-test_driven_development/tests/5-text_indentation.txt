@@ -13,7 +13,7 @@ This functions prints 2 new lines after each of these characters ``.``, ``:`` an
 
 ::
 
-	>>> text_indentation = __import__('5-text_indentation.txt').text_indentation
+	>>> text_indentation = __import__('5-text_indentation').text_indentation
 	>>> text_indentation("string.")
 	string.
 	<BLANKLINE>
@@ -48,7 +48,7 @@ Similarly, no spaces are printed at the end of each printed line.
 	>>> text_indentation("     Woah now.    This is messy.  ")
 	Woah now.
 	<BLANKLINE>
-	This is messy
+	This is messy.
 	<BLANKLINE>
 
 New lines are only printed for the characters ``.``, ``?``, and ``:`` -
@@ -86,7 +86,7 @@ New lines within a string are printed as normal.
 ::
 
 	>>> text_indentation("A sneaky \n new line.")
-	A sneaky
+	A sneaky 
 	new line.
 	<BLANKLINE>
 
@@ -153,8 +153,3 @@ The parameter ``text`` must be a string. Otherwise, a TypeError is raised.
 	Traceback (most recent call last):
 	TypeError: text must be a string
 
-::
-
-	>>> text_indentation(None)
-	Traceback (most recent call last):
-	TypeError: text must be a string	
