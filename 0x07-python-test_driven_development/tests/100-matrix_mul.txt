@@ -128,4 +128,42 @@ is raised.
 
 Invalid Matrices
 =================
+
+The parameters ``m_a`` and ``m_b`` must be lists. If not a list, raise TypeError
+
+::
+
+	>>> print(matrix_mul("not a list", [[1, 2]]))
+	Traceback (most recent call last):
+	TypeError: m_a must be a list
+
+::
+
+	>>> print(matrix_mul([[1, 2]], "also not a list"))
+	Traceback (most recent call last):
+	TypeError: m_b must be a list
+
+::
+
+	>>> print(matrix_mul(None, None))
+	Traceback (most recent call last):
+	TypeError: m_a must be a list
+
+Check also if the inputs are lists of lists.
+
+::
+
+	>>> print(matrix_mul([1, 2], [[3, 4]]))
+	Traceback (most recent call last):
+	TypeError: m_a must be a list of lists
+
+::
+
+	>>> print(matrix_mul([[1, 2]], [3, 4]))
+	Traceback (most recent call last):
+	TypeError: m_b must be a list of lists
+
+::
+
+	
 		
