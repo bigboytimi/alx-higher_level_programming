@@ -9,12 +9,12 @@ matrix of the result.
 Usage
 ======
 
-``matrix_mul`` multiplies only Matrix product(two matrices) and returns
+``matrix_mul(...)`` multiplies only Matrix product(two matrices) and returns
 the result in a new matrix
 
 ::
-	
-	>>> matrix_mul = __import__('100-matrix_mul').matrix.mul
+
+	>>> matrix_mul = __import__('100-matrix_mul').matrix_mul
 	>>> m_a = [
 	... [1, 2],
 	... [3, 4],
@@ -47,14 +47,14 @@ The function also works with floats
 	... [7.2, 4.4]
 	... ]
 	>>> print(matrix_mul(m_a, m_b))
-	[[34.69, 55.44000000000001], [-78.61, 29.01800000000008]]
+	[[34.69, 55.44000000000001], [-78.61, 29.018000000000008]]
 
 Integers and floats can be combined.
 
 ::
 
 	>>> m_a = [
-	... [1, 2.2, 3.3, 4]
+	... [1, 2.2, 3.3, 4],
 	... [5, 6, 7, 8.8]
 	... ]
 	>>> m_b = [
@@ -163,7 +163,50 @@ Check also if the inputs are lists of lists.
 	Traceback (most recent call last):
 	TypeError: m_b must be a list of lists
 
+The list of lists must also contain either integers or floats
+
 ::
 
+	>>> print(matrix_mul([[1, "non-number"]], [[3, 4]]))
+	Traceback (most recent call last):
+	TypeError: m_a should contain only integers or floats
+
+::
+
+	>>> print(matrix_mul([[1, 2]], [[{"b": 4}, 8.8]]))
+	Traceback (most recent call last):
+	TypeError: m_b should contain only integers or floats
+
+::
+
+	>>> print(matrix_mul([[1, "non-number"]], [[{"a": 1}, 8.8]]))
+	Traceback (most recent call last):
+	TypeError: m_a should contain only integers or floats
+
+
+The length of row all rows in both matrices must be equal.
 	
-		
+::
+
+	>>> m_a = [
+	... [1, 2],
+	... [3, 4, 5],
+	... ]
+	>>> m_b = [
+	... [1, 2],
+	... [3, 4],
+	... ]
+	>>> print(matrix_mul(m_a, m_b))
+	Traceback (most recent call last):
+	TypeError: each row of m_a must be of the same size
+
+::
+
+	>>> m_a = [
+	... [1, 2],
+	... [3, 4, 5]
+	... ]
+	>>> m_b = m_a
+	>>> print(matrix_mul(m_a, m_b))
+	Traceback (most recent call last):
+	TypeError: each row of m_a must be of the same size
