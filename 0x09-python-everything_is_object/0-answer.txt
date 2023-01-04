@@ -1,1 +1,1 @@
-print_object_type
+print_type
