@@ -68,4 +68,3 @@ class Rectangle:
     def __repr__(self):
         """return a string representation of rectangle"""
         return "Rectangle(%s, %s)" % (self.__width, self.__height)
-
