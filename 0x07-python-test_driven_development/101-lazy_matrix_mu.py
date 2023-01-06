@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 import numpy as np
 
+
 def lazy_matrix_mul(m_a, m_b):
     """Returns the products of m_a and m_b
     multiplied using Numpy
