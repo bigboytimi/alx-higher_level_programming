@@ -14,7 +14,7 @@ class BaseGeometry:
     def integer_validator(self, name, value):
         """Validate a parameter as an integer.
 
-        Args: 
+        Args:
             name(str): The name of the parameter
             value(str): The parameter to validate
         Raises:
