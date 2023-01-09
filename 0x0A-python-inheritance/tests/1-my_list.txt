@@ -1,18 +1,25 @@
-Check for module docstring:
+Test for 1-my_list.py
+=====================
 
-	>>> m = __import__("1-my_list").__doc__
-	>>> len(m) > 1
-	True
+Test 1: import
+>>> MyList = __import__("1-my_list").__doc__
+>>>
+--------------------------------------------
 
-Check for class docstring:
-	>>> c = __import__("1-my_list").MyList.__doc__
-	>>> len(c) > 1
-	True
+Test 2: common case
+
+>>> my_list = MyList()
+>>> my_list.append(1)
+>>> my_list
 
 
 Check for method docstring:
 	>>> mod = __import__("1-my_list").MyList.print_sorted.__doc__
 	>>> len(mod) > 1
+	True
+
+Check that MyList inherits from list:
+	>>> issubclass(MyList, list)
 	True
 
 Check for empty list:
@@ -21,6 +28,7 @@ Check for empty list:
 	[]
 
 Check for append method:
+	>>> l = MyList()
 	>>> l.append(1)
 	>>> l.append(5)
 	>>> l.append(3)
