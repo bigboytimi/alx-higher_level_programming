@@ -4,8 +4,6 @@
 
 class BaseGeometry:
     """A class named BaseGeometry"""
-    def __init__(self):
-        super().__init__()
 
     def area(self):
         """Not yet implemented"""
