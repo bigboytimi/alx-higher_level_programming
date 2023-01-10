@@ -15,4 +15,7 @@ def write_file(filename="", text=""):
     """
 
     with open(filename, "w", encoding="utf-8") as new_file:
-        return new_file.write(text)
+        new_file.write(text)
+
+        number = new_file.tell()
+        return number
