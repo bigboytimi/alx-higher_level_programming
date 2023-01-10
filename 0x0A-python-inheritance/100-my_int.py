@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Define a class MyInt."""
 
+
 class MyInt(int):
     """A class called MyInt"""
 
@@ -11,4 +12,3 @@ class MyInt(int):
     def __ne__(self, value):
         """Overrides the negative operator with equality."""
         return self.real == value
-
