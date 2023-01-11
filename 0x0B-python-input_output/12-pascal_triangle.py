@@ -1,7 +1,9 @@
 #!/usr/bin/python3
+"""Create a list of lists of integers."""
 
 
 def pascal_triangle(n):
+    """Return a lists of lists on integer."""
     if n <= 0:
         return []
 
