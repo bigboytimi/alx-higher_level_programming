@@ -66,9 +66,13 @@ class Rectangle(Base):
 
     def display(self):
         """prints to stdout."""
+
+
         ht = self.__height
         wt = self.__width
+        [print("") for y in range(self.y)]
         for i in range(ht):
+            [print(" ", end="") for x in range(self.x)]
             for j in range(wt):
                 print("#", end="")
             print("")
