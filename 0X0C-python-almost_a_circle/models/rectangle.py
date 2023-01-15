@@ -65,7 +65,7 @@ class Rectangle(Base):
         return self.__width * self.__height
 
     def update(self, *args, **kwargs):
-
+        """Update the rectangle method"""
         if args and len(args) != 0:
             a = 0
             for arg in args:
@@ -111,6 +111,16 @@ class Rectangle(Base):
             for j in range(wt):
                 print("#", end="")
             print("")
+
+    def to_dictionary(self):
+        """Return the dictionary representation."""
+        return {
+                "id": self.id,
+                "width": self.width,
+                "height": self.height,
+                "x": self.x,
+                "y": self.y
+                }
 
     def __str__(self):
         """return method"""
